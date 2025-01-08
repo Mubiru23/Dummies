@@ -1,0 +1,8 @@
+* text=auto
+
+#enforce lf for all text files
+* text eol=lf
+#add exceptions for binary files
+*.png binary
+*.jpg binary
+*.exe binary
