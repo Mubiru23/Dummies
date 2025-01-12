@@ -26,10 +26,18 @@ class Dummies(models.Model):
     status = models.CharField(max_length=40, choices=STATUS)
     title = models.CharField(max_length=200)
     image = models.FileField(upload_to='content/',blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image_2 = models.FileField(upload_to='content/',blank=True)
+    price = models.DecimalField(max_digits=100, decimal_places=2)
     description = models.TextField(max_length=10000)
     upload_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
- 
+    
+
+class vidoes(models.Model):
+    title = models.CharField(max_length=200)
+    video_1=models.FileField(upload_to='content/',blank=True)
+    vdeo_2 = models.FileField(upload_to='content/',blank=True)
+    def __str__(self):
+        return self.title

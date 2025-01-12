@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load  static %}
+<head>
+     <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        rel="stylesheet" 
+    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy it!</title>
+</head>
+
+    <body>
+    <!-- Header -->
+    <header class="header">
+         
+        <nav class="nav">
+            <ul class="nav-links">
+           
+        <div class="menu-lef">
+        <ul> 
+            <div class="icon-item">
+           <a href="{% url 'home' %}"><i class="fa-solid fa-gem"></i></a>    
+           
+            <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong>Dummy it!</strong></p>
+             <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: #4CAF50;"><strong>Simply Elegant</strong></p>
+            </div>
+        </ul>
+      </div>
+                
+                <li>
+                    <a href="#categories">Categories</a>
+                    <ul class="dropdown">
+                        <li><a href="{% url 'gallery' %}"> <strong style="color: #25D366;">Gallery</strong></a></li>
+                        <li><a href="{% url 'store' %}">Store Display Dummies</a></li>
+                        <li><a href="{% url 'fashion' %}">Fashion Design Dummies</a></li>
+                        <li><a href="{% url 'customizable' %}">Customizable Dummies</a></li>
+                        <li><a href="{% url 'men' %}">Men's Dummies</a></li>
+                        <li><a href="{% url 'women' %}">Women's Dummies</a></li>
+                        <li><a href="{% url 'kids' %}">Kids' Dummies</a></li>
+                        
+                    </ul>
+                </li>
+                
+                
+                <li>
+                    <a href="#categories">Contact</a>
+                    <ul class="dropdown">
+                        <li  class="footer-icons" style="font-size: small;"><a href="https://wa.me/123456789" target="_blank"> WhatsApp
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a></a></li>
+                        <li ><a href="">TEL:0754125788</a></li>
+            
+                    </ul>
+                </li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li><a href="#cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                <li><a href="#account"><i class="fa-solid fa-user"></i> Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--main content-->
+    <main>
+{% block content %}
+
+<!--content will be loaded here-->
+
+{% endblock %}
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <footer class="footer">
+    <div class="footer-icons">
+        <a href="https://instagram.com" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://tiktok.com" target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://wa.me/123456789" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+    <p>Location: 123 Dummy St, City, Country | Phone: +123456789 | Email: info@dummyit.com</p>
+    <p>&copy; 2025 Dummy it! All rights reserved.</p>
+    </footer>
+   
+        <!-- WhatsApp Chat Bot -->
+    <div class="whatsapp-bot" onclick="window.open('https://wa.me/123456789', '_blank')">
+         
+            <i style = " font-size: 30px;" class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    </body>
+</html>
+
+
+
+
+    <style>
+
+/* Global Styles */
+body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+            background: #fff;
+        }
+
+       
+          /* Header */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #28a745;
+            border-radius: 50px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .logo:hover {
+            background: #28a745;
+            color: #fff;
+        }
+
+        .logo-green {
+            color: #28a745;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover .logo-green {
+            color: #fff;
+        }
+
+        .logo-black {
+            color: #333;
+        }
+
+        .nav {
+            margin-left: 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            position: relative;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px; /* Reduced font size */
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px; /* Wider dropdown */
+            display: none;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 10;
+        }
+
+        .nav-links li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 12px; /* Smaller font size for dropdown items */
+        }
+
+        .dropdown a:hover {
+            background: #f4f4f4;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: px;
+            background: #f4f4f4;
+        }
+
+        .motion-dummy video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        /* Carousel */
+        .carousel {
+            padding: 50px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            display: flex;
+            gap: 20px;
+            animation: scroll 35s linear infinite; /* Slower speed */
+        }
+
+        .carousel-item img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Scrollable Section */
+        .scrollable-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+        }
+
+        .scrollable-container img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px;
+            background: #f9f9f9;
+        }
+
+        .vertical-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Footer */
+      .footer {
+              background-color: #f4f4f4;
+              padding: 20px;
+              text-align: center;
+              font-size: 12px;
+              color: black;
+          }
+
+          .footer-icons {
+              margin-bottom: 10px;
+          }
+
+          .footer-icons a {
+              text-decoration: none;
+              margin: 0 10px;
+              font-size: 24px; /* Size of the icons */
+              color: black;
+              transition: color 0.3s ease;
+          }
+
+          .footer-icons a:hover {
+              color: #4CAF50; /* Green on hover */
+          }
+
+          .footer p {
+              margin-top: 10px;
+              color: black;
+          }
+
+          /* WhatsApp Chat Bot */
+      .whatsapp-bot {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25D366;
+        color: #fff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .whatsapp-bot img {
+        width: 30px;
+      }
+
+
+      .icon-item {
+        text-align: center;
+        font-size: 24px;
+        color: #4CAF50; /* Main color for icons */
+        transition: transform 0.3s ease, color 0.3s ease;
+        width: 120px;
+        flex: 1;
+      }
+
+      
+      .icon-item i {
+        font-size: 48px; /* Size of the icon */
+        margin-bottom: 10px;
+        color: black; /* Default icon color */
+        position:left;
+      }
+
+      .icon-item:hover i {
+        transform: scale(1.2); /* Slight zoom effect on hover */
+        color: #4CAF50; /* Green color on hover */
+      }
+
+      .icon-item p {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+        font-weight: 500;
+      }
+
+    </style>

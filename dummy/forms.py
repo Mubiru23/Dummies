@@ -2,10 +2,10 @@ from django import forms
 from .models import Dummies
  
 
-class ContentForm(forms.ModelForm):
+class DummiesForm(forms.ModelForm):
     class Meta:
         model = Dummies
-        fields = ['category', 'satus', 'title', 'image', 'price','description', ]
+        fields = ['category', 'status', 'title', 'image', 'price','description', ]
 
  
 

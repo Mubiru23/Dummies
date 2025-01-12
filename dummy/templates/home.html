@@ -1,235 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        rel="stylesheet"
-       
-    />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dummy it!</title>
+{%  extends 'base.html' %}
+{% block content %}
+
+
     <style>
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            color: #333;
-            background: #fff;
-        }
-
-       
-          /* Header */
-        .header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: 2px solid #28a745;
-            border-radius: 50px;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        .logo:hover {
-            background: #28a745;
-            color: #fff;
-        }
-
-        .logo-green {
-            color: #28a745;
-            transition: color 0.3s ease;
-        }
-
-        .logo:hover .logo-green {
-            color: #fff;
-        }
-
-        .logo-black {
-            color: #333;
-        }
-
-        .nav {
-            margin-left: 20px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 40px;
-            position: relative;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px; /* Reduced font size */
-        }
-
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 200px; /* Wider dropdown */
-            display: none;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            list-style: none;
-            padding: 10px 0;
-            z-index: 10;
-        }
-
-        .nav-links li:hover .dropdown {
-            display: block;
-        }
-
-        .dropdown a {
-            display: block;
-            padding: 10px 20px;
-            color: #333;
-            text-decoration: none;
-            font-size: 12px; /* Smaller font size for dropdown items */
-        }
-
-        .dropdown a:hover {
-            background: #f4f4f4;
-        }
-
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: px;
-            background: #f4f4f4;
-        }
-
-        .motion-dummy video {
-            width: 100%;
-            max-width: 800px;
-            border-radius: 10px;
-        }
-
-        /* Carousel */
-        .carousel {
-            padding: 50px;
-            background: #fff;
-            overflow: hidden;
-        }
-
-        .carousel-container {
-            display: flex;
-            gap: 20px;
-            animation: scroll 35s linear infinite; /* Slower speed */
-        }
-
-        .carousel-item img {
-            width: 300px;
-            border-radius: 10px;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Scrollable Section */
-        .scrollable-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-        }
-
-        .scrollable-container img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 50px;
-            background: #f9f9f9;
-        }
-
-        .vertical-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .card p {
-            margin-top: 10px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        /* Footer */
-      .footer {
-              background-color: #f4f4f4;
-              padding: 20px;
-              text-align: center;
-              font-size: 12px;
-              color: black;
-          }
-
-          .footer-icons {
-              margin-bottom: 10px;
-          }
-
-          .footer-icons a {
-              text-decoration: none;
-              margin: 0 10px;
-              font-size: 24px; /* Size of the icons */
-              color: black;
-              transition: color 0.3s ease;
-          }
-
-          .footer-icons a:hover {
-              color: #4CAF50; /* Green on hover */
-          }
-
-          .footer p {
-              margin-top: 10px;
-              color: black;
-          }
-
+      
       /* Video Card */
       .video-card {
         position: relative;
@@ -240,7 +14,7 @@
 
 
       .motion-dummy video {
-        width: 100%;
+        width: 200%;
         max-width: 10000px;
         border-radius: 10px;
       }
@@ -294,75 +68,77 @@
         background-color: #0056b3;
       }
 
-     
-      /* WhatsApp Chat Bot */
-      .whatsapp-bot {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #25D366;
-        color: #fff;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      }
+          
+      .gallery-container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-      .whatsapp-bot img {
-        width: 30px;
-      }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusts to screen size */
+      gap: 20px;
+    }
 
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background-color: white;
+      transition: transform 0.3s ease;
+      height: 350px;
+    }
 
-      .icon-item {
-        text-align: center;
-        font-size: 24px;
-        color: #4CAF50; /* Main color for icons */
-        transition: transform 0.3s ease, color 0.3s ease;
-        width: 120px;
-        flex: 1;
-      }
+    .gallery-card:hover {
+      transform: scale(1.02);
+    }
 
-      .icon-item i {
-        font-size: 48px; /* Size of the icon */
-        margin-bottom: 10px;
-        color: black; /* Default icon color */
-        position:left;
-      }
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
 
-      .icon-item:hover i {
-        transform: scale(1.2); /* Slight zoom effect on hover */
-        color: #4CAF50; /* Green color on hover */
-      }
+    .gallery-card .hover-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-      .icon-item p {
-        margin: 0;
-        font-size: 16px;
-        color: #333;
-        font-weight: 500;
-      }
-     
-     
-      div.gallery {
-  border: 1px solid #ccc;
-}
+    .gallery-card:hover .hover-image {
+      opacity: 1;
+    }
 
-div.gallery:hover {
-  border: 1px solid #777;
-}
+    .gallery-card .card-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      color: #333;
+      background-color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+    }
 
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
+    .gallery-card .out-label {
+      position: absolute;
+      top: 0.5px;
+      left: 5px;
+      background-color: #333;
+      color: white;
+      
+      padding: 2px;
+      border-radius: 2px;
+       
+    }
 
 * {
   box-sizing: border-box;
@@ -414,6 +190,7 @@ body, html {
 }
 
 /* Images used */
+
 .img1 { background-image: url("img_snow.jpg"); }
 .img2 { background-image: url("img_girl.jpg"); }
 .img3 { background-image: url("img_lights.jpg"); }
@@ -450,7 +227,7 @@ boddy {
   right: 0;
   bottom: 0;
   min-width: 100%;
-  min-height: 100%;
+  min-height: 50%;
 }
 
 .content {
@@ -480,77 +257,29 @@ boddy {
     </style>
    
    
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-         
-        <nav class="nav">
-            <ul class="nav-links">
-           
-        <div class="menu-lef">
-        <ul>
-             
-            <div class="icon-item">
-           <i class="fa-solid fa-gem"></i>
-           <p>Dummy it!</p>
-             <p>Simply  Elegant</p>
-            </div>
-        </ul>
-      </div>
-                <li><a href="#home">Home</a></li>
-                <li>
-                    <a href="#categories">Categories</a>
-                    <ul class="dropdown">
-                        <li><a href="#store-display">Store Display Dummies</a></li>
-                        <li><a href="#fashion-design">Fashion Design Dummies</a></li>
-                        <li><a href="#customizable">Customizable Dummies</a></li>
-                        <li><a href="#men-dummies">Men's Dummies</a></li>
-                        <li><a href="#women-dummies">Women's Dummies</a></li>
-                        <li><a href="#kids-dummies">Kids' Dummies</a></li>
-                        <li><a href="#accessories">Accessories</a></li>
-                    </ul>
-                </li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="#faqs">FAQs</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
-                <li><a href="#account"><i class="fa-solid fa-user"></i> Account</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-    <!-- Hero Section -->
-    <div class="hero">
-        <strong><p>Discover the Best Dummies for Your Needs<p/></strong>
-       
-        <div class="motion-dummy">
-            <video controls autoplay loop>
-                <source src="dummy-video.mp4" type="video/mp4">
-            </video>
-        </div>
+ <!--auto play video-->
+   <boddy>
+  
+    {% for video in videos %}
+    <video autoplay muted loop id="myVideo">
+      <source src="{{ video.video_1.url }}" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="content">
+      <button id="myBtn" onclick="myFunction()">Pause</button>
     </div>
+    {% endfor %}
+  </boddy>
    
-    </section>
    
    
-   
-  <!-- change on scroll -->      
+<!-- change on scroll -->      
  <body>
-
-<div class="bg-image img1"></div>
-<div class="bg-image img2"></div>
-<div class="bg-image img3"></div>
-<div class="bg-image img4"></div>
-<div class="bg-image img5"></div>
-<div class="bg-image img6"></div>
-
+{% for image in images %}
+{% if image.category == 'kids' %}
+<div class="bg-image img1"><img src=" {{ image.image.url }} " alt="Mountains" width="100%" height="400"></div>
+{% endif %}
+{% endfor %}
 </body>  
    
    
@@ -559,150 +288,90 @@ boddy {
     <!-- Carousel Section -->
     <section id="carousel" class="carousel">
         <h2>Our Finest Dummies</h2>
+        
         <div class="carousel-container">
-            <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-            <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-             <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-            <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-             <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-            <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-            <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-            <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-             <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-            <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-             <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
-            <div class="carousel-item"> <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"></div>
+          {% for dummy in images %}
+            <div class="carousel-item"> <img src=" {{ dummy.image.url }} " alt="Mountains" width="600" height="400"></div>
+            {% endfor %}
         </div>
+        
     </section>
 
      
-   
-
-
-   
-   
-   
     <!-- Gallary -->
-    <div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="img_5terre.jpg">
-      <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
+  <div class="gallery-container">
+    <div id="gallery-grid" class="gallery-grid">
+      {% for dummy in images %}
+      {% if dummy.category == 'men' %}
+      <div class="gallery-card">
+        {% if dummy.status == "out" %}
+        <p class="out-label" style="font-size: smaller;">out</p>
+        {% endif %}
+        {% if dummy.status == "available" %}
+        <p class="out-label" style="font-size: smaller;">Available</p>
+        {% endif %}
+        <img src="{{ dummy.image.url }}" alt="{{ dummy.title }}">
+        {% if dummy.image_2 %}
+        <img class="hover-image" src="{{ dummy.image_2.url }}" alt="{{ dummy.title }} Hover">
+        {% endif %}
+        <div class="card-text">
+          Name: {{ dummy.title }}<br>
+          Price: {{ dummy.price }}<br>
+          Category: {{ dummy.category }}
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
 </div>
+ 
 
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="img_forest.jpg">
-      <img src="img_forest.jpg" alt="Forest" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="img_lights.jpg">
-      <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="img_mountains.jpg">
-      <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="img_mountains.jpg">
-      <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-</div>
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="img_mountains.jpg">
-      <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="img_mountains.jpg">
-      <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-</div>
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="img_mountains.jpg">
-      <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-</div>
 <div class="clearfix"></div>
 
-
-   
-
-   
-   
-   
-
+  
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services">   
         <h2>Our Services</h2>
         <div class="vertical-cards">
             <div class="card">
-                <img src="/static/images/service1.jpg" alt="Service 1">
+                <img src="media/content/courses_Es9rhlb.jpg" alt="Service 1">
                 <p>Custom Dummy Design</p>
             </div>
             <div class="card">
-                <img src="/static/images/service2.jpg" alt="Service 2">
+                <img src="media/content/courses_3SShOAv.jpg" alt="Service 2">
                 <p>Store Display Solutions</p>
             </div>
             <div class="card">
-                <img src="/static/images/service3.jpg" alt="Service 3">
+                <img src="media/content/courses_FvnPJse.jpg" alt="Service 3">
                 <p>Fashion Design Essentials</p>
             </div>
             <div class="card">
-                <img src="/static/images/service4.jpg" alt="Service 4">
+                <img src="media/content/courses_8xwL43Q.jpg" alt="Service 4">
                 <p>Mannequin Repairs</p>
             </div>
             <div class="card">
-                <img src="/static/images/service5.jpg" alt="Service 5">
+                <img src="media/content/courses_8xwL43Q.jpg" alt="Service 5">
                 <p>Customizable Mannequins</p>
             </div>
         </div>
     </section>
  
-   
-   
-   
- <boddy>
 
-<video autoplay muted loop id="myVideo">
-  <source src="rain.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
 
-<div class="content">
- 
-  <button id="myBtn" onclick="myFunction()">Pause</button>
-</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <!-- Hero Section -->
+      <div class="hero">
+           
+         
+          <div class="motion-dummy">
+              <video controls autoplay loop>
+                  <source src="dummy-video.mp4" type="video/mp4">
+              </video>
+          </div>
+      </div>
+     
+      </section>
 
 <script>
 var video = document.getElementById("myVideo");
@@ -718,41 +387,6 @@ function myFunction() {
   }
 }
 </script>
-
-</body>
-   
-   
-     
-
-    <!-- Footer -->
-    <footer class="footer">
-        <footer class="footer">
-    <div class="footer-icons">
-        <a href="https://instagram.com" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://facebook.com" target="_blank">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://tiktok.com" target="_blank">
-            <i class="fa-brands fa-tiktok"></i>
-        </a>
-        <a href="https://wa.me/123456789" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-    </div>
-    <p>Location: 123 Dummy St, City, Country | Phone: +123456789 | Email: info@dummyit.com</p>
-    <p>&copy; 2025 Dummy it! All rights reserved.</p>
-    </footer>
-   
-        <!-- WhatsApp Chat Bot -->
-    <div class="whatsapp-bot" onclick="window.open('https://wa.me/123456789', '_blank')">
-         
-            <i style = " font-size: 30px;" class="fa-brands fa-whatsapp"></i>
-        </a>
-    </div>
-   
-   
    
     <script>
         console.log("Website loaded successfully.");
@@ -786,5 +420,4 @@ function myFunction() {
         }, 3000); // 30 seconds interval
     </script>
    
-</body>
-</html>  
+ {% endblock %}
